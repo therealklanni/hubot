@@ -500,7 +500,7 @@ class Robot {
     this.logger.debug(`Loading adapter ${adapter}`)
 
     try {
-      const path = Array.from(HUBOT_DEFAULT_ADAPTERS).indexOf(adapter) !== -1 ? `${this.adapterPath}/${adapter}` : `hubot-${adapter}`
+      const path = Array.from(HUBOT_DEFAULT_ADAPTERS).indexOf(adapter) !== -1 ? `${this.adapterPath}/${adapter}` : adapter
 
       this.adapter = require(path).use(this)
     } catch (err) {
